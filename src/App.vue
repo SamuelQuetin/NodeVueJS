@@ -1,15 +1,7 @@
 
 <template>
   <div id="app">
-    <headerBase title="Salut à tous"/>
-    <img width="25%" src="./assets/logo.png">
-    <br>
-    <router-link to="/skill">skills</router-link>
-    <br>
-    <router-link to="/contact">contact</router-link>
-    <br>
-    <router-link to="/cat">cat</router-link>
-
+    <headerBase/>
     <router-view></router-view>
     <home/>
 
@@ -22,6 +14,9 @@ import footerBase from "./components/footer/footerBase";
 import headerBase from "./components/header/headerBase";
 
 export default {
+  components: {
+    headerBase
+  },
   computed: {
     username() {
       // Nous verrons ce que représente `params` dans un instant.

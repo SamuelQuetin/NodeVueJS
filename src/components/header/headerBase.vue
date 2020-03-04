@@ -1,58 +1,53 @@
 <template>
-  <nav>
-    <li class="nav-item">
-      <a class="nav-link" href>{{title}}</a>
+  <ul>
+    <li>
+      <a class="active" href="#home">Home</a>
     </li>
-  </nav>
+    <li>
+      <router-link to="/skill">Skills</router-link>
+    </li>
+    <li>
+      <router-link to="/cat">Cat</router-link>
+    </li>
+    <li style="float:right">
+      <router-link to="/contact">About</router-link>
+    </li>
+  </ul>
 </template>
-
 <script>
-export default {
-  name: "headerBase",
-  props: {
-    title: String
-  }
-};
+export default {};
 </script>
-
 <style>
-nav {
-  width: 100%;
-  background-color: #080808;
-  margin: 0;
-  display: flex;
-  flex-direction: row;
-  height: 50px;
-  justify-content: center;
-  align-items: center;
-  padding: 0 0 0 5%;
-  transition: all 0.2s ease-in;
-}
-nav:hover {
-  background-color: #052575;
-  transition: all 0.3s ease-in;
-}
-.navbar {
-  display: flex;
-  width: 100%;
+ul {
   list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
 }
-.nav-item {
-  width: 20%;
+
+li {
+  float: left;
+  border-right: 1px solid #bbb;
+}
+
+li:last-child {
+  border-right: none;
+}
+
+li a {
+  display: block;
+  color: white;
   text-align: center;
-}
-nav a {
+  padding: 14px 16px;
   text-decoration: none;
-  color: rgba(255, 255, 255, 0.75);
-  display: block;
-  width: 40%;
-  transition: all 0.2s ease-in;
 }
-nav a:hover {
-  text-decoration: none;
-  color: #fff;
-  display: block;
-  width: 40%;
-  transition: all 0.2s ease-in;
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #4CAF50;
 }
 </style>
