@@ -1,2 +1,0 @@
-# NodeVueJS
-Created with CodeSandbox
